@@ -25,7 +25,7 @@ public:
 	Board(int dim);
 	Board(const Board* b);
 	Board(int** blocks, int dim);
-    ~Board();
+    	~Board();
 // dimension of board
 	int dimension();     
 // hamming priority function, return number of blocks out of place
@@ -50,8 +50,8 @@ public:
 	std::forward_list<Board*> neighbors();  
 	
 // string representation of the board
-    std::string toString();
-
-    int** getBlocks();
+    	std::string toString();
+	
+	int** getBlocks();
 };
 #endif
