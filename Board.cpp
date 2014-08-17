@@ -1,20 +1,20 @@
 #include "Board.h"
 #include <sstream>
 
-    Board* goal = NULL;
-
-    int** Board::arAlloc(int dim)
-    {
-    	int** ar = new int*[dim];
+	Board* goal = NULL;
+	
+	int** Board::arAlloc(int dim)
+	{
+		int** ar = new int*[dim];
 		for (int i = 0; i < dim; i++)
 			ar[i] = new int[dim];
-    return ar;
-    }
-
-    int** Board::getBlocks()
-    {
-        return blocks;
-    }
+	    	return ar;
+	}
+	
+	int** Board::getBlocks()
+	{
+		return blocks;
+	}
 
 /* Filling board with dimensional dim;
    Right bottom tile is empty tile to shift through board 
@@ -46,14 +46,14 @@
 		for (int i = 0; i < dim; i++)
 			for (int j = 0; j < dim; j++)
 				this->blocks[i][j] = blocks[i][j];
-    }
+    	}
 
-    Board::~Board()
-    {
-        for (int i = 0; i < dim; i++)
-            delete [] blocks[i];
-        delete [] blocks;
-    }
+    	Board::~Board()
+    	{
+        	for (int i = 0; i < dim; i++)
+	            delete [] blocks[i];
+        	delete [] blocks;
+	}
 
 	int Board::dimension()
 	{
@@ -93,9 +93,9 @@
 
 	bool Board::isGoal()
 	{
-        if (goal == NULL || goal->dim != this->dim)
-            goal =  new Board(dim);
-        return this->equals(goal);
+        	if (goal == NULL || goal->dim != this->dim)
+        	    goal =  new Board(dim);
+        	return this->equals(goal);
 	}
 
 	Board Board::twin()
@@ -142,9 +142,9 @@
 
 	void Board::boardToList(int ri, int ci, int rn, int cn, std::forward_list<Board*> & l)
 	{
-        Board*b = new Board(this);
-        exch(b->blocks, ri, ci, rn, cn);
-        l.push_front(b);
+	        Board*b = new Board(this);
+	        exch(b->blocks, ri, ci, rn, cn);
+	        l.push_front(b);
 	}
 
 	bool Board::exist(int i, int j)	
@@ -163,7 +163,7 @@
 	{
 		std::string s;
 		std::stringstream ss;
-        s.append(std::to_string(dim) + "\n");
+        	s.append(std::to_string(dim) + "\n");
 		for (int i =0; i < dim; i++)
 		{
 			for (int j = 0; j < dim; j++)
