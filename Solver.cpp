@@ -42,14 +42,14 @@ Solver::Solver(Board* initial)
 	std::priority_queue<Node*, std::vector<Node*>, bool (*)(Node*, Node*)> pq(ByManhatten);
 	std::priority_queue<Node*, std::vector<Node*>, bool (*)(Node*, Node*)> pq_twin(ByManhatten);
 
-    if ((minPq1 = first)->board->isGoal())
+    	if ((minPq1 = first)->board->isGoal())
 	{
 		result = minPq1;
 		solvable = true;
 		return;
 	}
 
-    if ((minPq2 = first_twin)->board->isGoal())
+    	if ((minPq2 = first_twin)->board->isGoal())
 	{
 		result = minPq2;
 		solvable = false;
